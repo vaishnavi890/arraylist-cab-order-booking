@@ -1,4 +1,4 @@
-# switch-cab-order-booking
+# cab-order-booking
 
 ## About Version 3.1.1
 Welcome to the CAB Booking Application! This application allows users to book cabs, track rides, and rate drivers. This README provides an overview of the project, its setup, and its functionalities.
