@@ -9,6 +9,16 @@ public class Ride {
     private double fare;
     private String status;
 
+    public Ride(int rideId, int userId, int driverId, String pickupLocation, String dropoffLocation, double fare) {
+        this.rideId = rideId;
+        this.userId = userId;
+        this.driverId = driverId;
+        this.pickupLocation = pickupLocation;
+        this.dropoffLocation = dropoffLocation;
+        this.fare = fare;
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Ride{" +

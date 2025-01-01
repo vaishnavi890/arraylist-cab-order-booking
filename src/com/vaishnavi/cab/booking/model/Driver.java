@@ -7,6 +7,13 @@ public class Driver {
     private String phone;
     private String cabDetails;
 
+    public Driver(int driverId, String name, String email, String phone) {
+        this.driverId = driverId;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.cabDetails = cabDetails;
+    }
 
     @Override
     public String toString() {
@@ -59,5 +66,4 @@ public class Driver {
         this.cabDetails = cabDetails;
     }
 }
-
 

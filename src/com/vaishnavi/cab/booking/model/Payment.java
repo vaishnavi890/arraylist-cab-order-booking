@@ -4,9 +4,18 @@ public class Payment {
     private int paymentId;
     private int rideId;
     private int userId;
-    private int amount;
+    private double amount;
     private String paymentMethod;
     private String status;
+
+    public Payment(int paymentId, int rideId, int userId, double amount, String paymentMethod) {
+        this.paymentId = paymentId;
+        this.rideId = rideId;
+        this.userId = userId;
+        this.amount = amount;
+        this.paymentMethod = paymentMethod;
+    }
+
 
     @Override
     public String toString() {
@@ -45,10 +54,10 @@ public class Payment {
     }
 
     public int getAmount() {
-        return amount;
+        return (int) amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
@@ -68,4 +77,5 @@ public class Payment {
         this.status = status;
     }
 }
+
 

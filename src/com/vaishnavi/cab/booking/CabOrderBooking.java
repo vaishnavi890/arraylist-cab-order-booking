@@ -1,8 +1,13 @@
 package com.vaishnavi.cab.booking;
 
-import com.vaishnavi.cab.booking.service.*;
-import com.vaishnavi.cab.booking.model.*;
-
+import com.vaishnavi.cab.booking.model.Driver;
+import com.vaishnavi.cab.booking.model.Payment;
+import com.vaishnavi.cab.booking.model.Ride;
+import com.vaishnavi.cab.booking.model.Users;
+import com.vaishnavi.cab.booking.service.DriverService;
+import com.vaishnavi.cab.booking.service.PaymentService;
+import com.vaishnavi.cab.booking.service.RideService;
+import com.vaishnavi.cab.booking.service.UserService;
 
 import java.util.Scanner;
 
@@ -80,7 +85,7 @@ public class CabOrderBooking {
                     System.out.print("Enter Phone: ");
                     String phone = scanner.nextLine();
 
-                    Users user = new Users(userid, name, email, phone);
+                    Users user = new Users(id, name, email, phone);
                     userService.registerUser(user);
                     break;
                 case 2:
@@ -120,7 +125,7 @@ public class CabOrderBooking {
                     System.out.print("Enter Cab Details: ");
                     //String cabDetails = scanner.nextLine();
 
-                    Driver driver = new Driver(driverId, name, email, phone);
+                    Driver driver = new Driver(Id, name, email, phone);
                     driverService.registerDriver(driver);
                     break;
                 case 2:
@@ -165,7 +170,7 @@ public class CabOrderBooking {
                     System.out.print("Enter Status: ");
                     //String status = scanner.nextLine();
 
-                    Ride ride = new Ride(rideId, userId, driverId, pickupLocation, dropoffLocation, fare);
+                    Ride ride = new Ride(Id, userId, driverId, pickupLocation, dropoffLocation, fare);
                     rideService.createRide(ride);
                     break;
                 case 2:
@@ -207,7 +212,7 @@ public class CabOrderBooking {
                     System.out.print("Enter Status: ");
                     //String status = scanner.nextLine();
 
-                    Payment payment = new Payment(paymentId, rideId, userId, amount, paymentMethod);
+                    Payment payment = new Payment(Id, rideId, userId, amount, paymentMethod);
                     paymentService.processPayment(payment);
                     break;
                 case 2:
@@ -229,4 +234,5 @@ public class CabOrderBooking {
         System.out.println("Feature under construction!");
     }
 }
+
 

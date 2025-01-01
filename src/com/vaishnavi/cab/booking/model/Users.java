@@ -1,10 +1,20 @@
 package com.vaishnavi.cab.booking.model;
 
+
+import java.util.Objects;
+
 public class Users {
     private int userid;
     private String name;
     private String email;
     private String phone;
+
+    public Users(int userid, String name, String email, String phone) {
+        this.userid = userid;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
 
     @Override
     public String toString() {
@@ -15,6 +25,7 @@ public class Users {
                 ", phone='" + phone + '\'' +
                 '}';
     }
+
 
     public int getUserid() {
         return userid;
@@ -46,6 +57,8 @@ public class Users {
 
     public void setPhone(String phone) {
         this.phone = phone;
+
     }
 }
+
 
