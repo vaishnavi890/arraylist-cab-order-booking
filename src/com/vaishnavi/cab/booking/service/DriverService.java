@@ -1,28 +1,23 @@
 package com.vaishnavi.cab.booking.service;
 
 import com.vaishnavi.cab.booking.model.Driver;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.vaishnavi.cab.booking.repository.DriverRepository;
 
 public class DriverService {
-    private List<Driver> driverList = new ArrayList<>();
+    private DriverRepository driverRepository = new DriverRepository();
 
     public void registerDriver(Driver driver) {
-        driverList.add(driver);
-        System.out.println("Driver registered successfully: " + driver);
-    }
-
-    public void viewDrivers() {
-        if (driverList.isEmpty()) {
-            System.out.println("No drivers found.");
+        if (!driverRepository.containsDriver(driver.getDriverId())) {
+            driverRepository.addDriver(driver);
+            System.out.println("Driver registered successfully!");
         } else {
-            System.out.println("Registered Drivers:");
-            for (Driver driver : driverList) {
-                System.out.println(driver);
-            }
+            System.out.println("Driver already exists!");
         }
     }
-}
 
+    public void displayDrivers() {
+        driverRepository.getAllDrivers().forEach((key, value) ->
+                System.out.println("Key: " + key + ", Value: " + value));
+    }
+}
 

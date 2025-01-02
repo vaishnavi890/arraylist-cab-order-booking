@@ -1,60 +1,48 @@
 package com.vaishnavi.cab.booking.model;
 
 public class Payment {
-    private int paymentId;
-    private int rideId;
-    private int userId;
+    private String paymentId;
+    private String rideId;
+    private String userId;
     private double amount;
     private String paymentMethod;
     private String status;
 
-    public Payment(int paymentId, int rideId, int userId, double amount, String paymentMethod) {
+    public Payment(String paymentId, String rideId, String userId, double amount, String paymentMethod, String status) {
         this.paymentId = paymentId;
         this.rideId = rideId;
         this.userId = userId;
         this.amount = amount;
         this.paymentMethod = paymentMethod;
+        this.status = status;
     }
 
-
-    @Override
-    public String toString() {
-        return "Payment{" +
-                "paymentId=" + paymentId +
-                ", rideId=" + rideId +
-                ", userId=" + userId +
-                ", amount=" + amount +
-                ", paymentMethod='" + paymentMethod + '\'' +
-                ", status='" + status + '\'' +
-                '}';
-    }
-
-    public int getPaymentId() {
+    public String getPaymentId() {
         return paymentId;
     }
 
-    public void setPaymentId(int paymentId) {
+    public void setPaymentId(String paymentId) {
         this.paymentId = paymentId;
     }
 
-    public int getRideId() {
+    public String getRideId() {
         return rideId;
     }
 
-    public void setRideId(int rideId) {
+    public void setRideId(String rideId) {
         this.rideId = rideId;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
-    public int getAmount() {
-        return (int) amount;
+    public double getAmount() {
+        return amount;
     }
 
     public void setAmount(double amount) {
@@ -75,6 +63,18 @@ public class Payment {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "paymentId='" + paymentId + '\'' +
+                ", rideId='" + rideId + '\'' +
+                ", userId='" + userId + '\'' +
+                ", amount=" + amount +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                ", status='" + status + '\'' +
+                '}';
     }
 }
 

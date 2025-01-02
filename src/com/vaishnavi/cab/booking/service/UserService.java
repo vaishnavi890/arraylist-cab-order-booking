@@ -1,27 +1,21 @@
 package com.vaishnavi.cab.booking.service;
 
-import com.vaishnavi.cab.booking.model.Users;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.vaishnavi.cab.booking.model.User;
+import com.vaishnavi.cab.booking.repository.UserRepository;
 
 public class UserService {
-    private List<Object> usersList = new ArrayList<>();
+    private UserRepository userRepository = new UserRepository();
 
-    public void registerUser(Users user) {
-        usersList.add(user);
-        System.out.println("User registered successfully: " + user);
-    }
-
-    public void viewUsers() {
-        if (usersList.isEmpty()) {
-            System.out.println("No users found.");
+    public void registerUser(User user) {
+        if (!userRepository.containsUser(user.getUserId())) {
+            userRepository.addUser(user);
+            System.out.println("User registered successfully!");
         } else {
-            System.out.println("Registered Users:");
-            for (Object user : usersList) {
-                System.out.println(user);
-            }
+            System.out.println("User already exists!");
         }
     }
-}
 
+    public void displayUsers() {
+        userRepository.displayAllUsers();
+    }
+}

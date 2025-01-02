@@ -1,13 +1,13 @@
 package com.vaishnavi.cab.booking.model;
 
 public class Driver {
-    private int driverId;
+    private String driverId;
     private String name;
     private String email;
     private String phone;
     private String cabDetails;
 
-    public Driver(int driverId, String name, String email, String phone) {
+    public Driver(String driverId, String name, String email, String phone, String cabDetails) {
         this.driverId = driverId;
         this.name = name;
         this.email = email;
@@ -15,22 +15,11 @@ public class Driver {
         this.cabDetails = cabDetails;
     }
 
-    @Override
-    public String toString() {
-        return "Driver{" +
-                "driverId=" + driverId +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", cabDetails='" + cabDetails + '\'' +
-                '}';
-    }
-
-    public int getDriverId() {
+    public String getDriverId() {
         return driverId;
     }
 
-    public void setDriverId(int driverId) {
+    public void setDriverId(String driverId) {
         this.driverId = driverId;
     }
 
@@ -64,6 +53,17 @@ public class Driver {
 
     public void setCabDetails(String cabDetails) {
         this.cabDetails = cabDetails;
+    }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "driverId='" + driverId + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", cabDetails='" + cabDetails + '\'' +
+                '}';
     }
 }
 

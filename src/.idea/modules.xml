@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/switch-cab-order-booking.iml" filepath="$PROJECT_DIR$/switch-cab-order-booking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/map-hashmap-cab-order-management.iml" filepath="$PROJECT_DIR$/map-hashmap-cab-order-management.iml" />
     </modules>
   </component>
 </project>
